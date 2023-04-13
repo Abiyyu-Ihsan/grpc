@@ -1,0 +1,51 @@
+syntax = "proto3";
+package service.fasilitas.master.proto.v2;
+import "proto/v2/annotations.proto";
+
+option go_package = "service-fasilitas/proto/v2";
+
+message GetMasterRegionByParamReq {
+    
+    int32 region_id = 1;
+    string propinsi = 2;
+    string kab_kota = 3;
+    string kecamatan = 4; 
+    string kelurahan = 5;
+    string flag_ibukota = 6;
+    string keterangan = 7;
+    int32 parent_id = 8;
+    string nama = 9;
+    string level = 10;
+    int32 ID = 11;
+}
+
+message MasterRegion {
+    int32 region_id = 1;
+    string propinsi = 2;
+    string kab_kota = 3; 
+    string kecamatan = 4; 
+    string kelurahan = 5;
+    string flag_ibukota = 6;
+    string keterangan = 7;
+    int32 parent_id = 8;
+    string nama = 9;
+    string level = 10;
+    int32 ID = 11;
+}
+
+service Fasilitas_service {
+    rpc GetMasterRegionByParam (GetMasterRegionByParamReq) returns (MasterRegion){
+       option (google.api.http) = {
+        get: "/masterregion"
+       };
+    }
+
+    rpc GetMasterRegionByParamId (GetMasterRegionByParamReq) returns (MasterRegion){
+       option (google.api.http) = {
+        get: "/masterregion/{ID}"
+       };
+    }
+  
+}
+
+

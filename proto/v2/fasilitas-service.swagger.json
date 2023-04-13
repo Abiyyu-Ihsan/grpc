@@ -1,0 +1,277 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "proto/v2/fasilitas-service.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "Fasilitas_service"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/masterregion": {
+      "get": {
+        "operationId": "Fasilitas_service_GetMasterRegionByParam",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2MasterRegion"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "propinsi",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "kabKota",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "kecamatan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "kelurahan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "flagIbukota",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "keterangan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ID",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "Fasilitas_service"
+        ]
+      }
+    },
+    "/masterregion/{ID}": {
+      "get": {
+        "operationId": "Fasilitas_service_GetMasterRegionByParamId",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v2MasterRegion"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "regionId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "propinsi",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "kabKota",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "kecamatan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "kelurahan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "flagIbukota",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "keterangan",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "parentId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "nama",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "level",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "Fasilitas_service"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v2MasterRegion": {
+      "type": "object",
+      "properties": {
+        "regionId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "propinsi": {
+          "type": "string"
+        },
+        "kabKota": {
+          "type": "string"
+        },
+        "kecamatan": {
+          "type": "string"
+        },
+        "kelurahan": {
+          "type": "string"
+        },
+        "flagIbukota": {
+          "type": "string"
+        },
+        "keterangan": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nama": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}
